@@ -1,0 +1,1112 @@
+[
+ {
+  "id": "1010",
+  "name": "Cash on Hand",
+  "active": true,
+  "sage_type": "Cash"
+ },
+ {
+  "id": "10120",
+  "name": "BANK OF INDIA",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10121",
+  "name": "HDFC BANK",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10122",
+  "name": "FDR WITH HDFC BANK",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10123",
+  "name": "SWEEP FDR WITH HDFC BANK",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10124",
+  "name": "DRIP INDIA IRRIGATION PVT LTD",
+  "active": true,
+  "sage_type": "Cash"
+ },
+ {
+  "id": "10125",
+  "name": "SHRI KISHORILAL VRINDAVAN DHAM",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10126",
+  "name": "AGRIMIST AUTOMOBILES PVT LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10127",
+  "name": "SHIVSHANKAR KRISHI UPKARAN",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10128",
+  "name": "DHEERENDERA PAWAR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10130",
+  "name": "NARENDERA HURMADE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10140",
+  "name": "MAHESH KUMAR VERMA",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10150",
+  "name": "LALAJI DHOTE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10151",
+  "name": "SHREE SAI SHIPPING NAGPUR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10152",
+  "name": "RAJENDERA ART JAIPUR (MURTI)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10153",
+  "name": "MOHIT SHARMA JAIPUR (MURTI)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10154",
+  "name": "ASIM KUMAR PANDA",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10155",
+  "name": "A. R. GALFAT",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10156",
+  "name": "INDIAN MARBLE HUB JAIPUR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10157",
+  "name": "STAR MURTI MUSEUM JAIPUR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10158",
+  "name": "JAIN TAILORS (CURTAINS)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10159",
+  "name": "SHIVANI ENTERPRISES INDORE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10160",
+  "name": "ROSHAN SHARMA NAGPUR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10161",
+  "name": "PATEL KRISHI SEVA KENDRE BADOR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10165",
+  "name": "SUNIL AUTOMOBILES CHINDWARA",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10170",
+  "name": "ANURAG GAUTAM",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10180",
+  "name": "RAVI KALE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10181",
+  "name": "M. CHANDRASEKAR",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10182",
+  "name": "RAMKAILASH BHATT",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10183",
+  "name": "FDR FOR INDORE COURT",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10190",
+  "name": "FDR SHRIRAM FINANCE CO. LTD.",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10191",
+  "name": "FDR 1 SHRIRAM TPT. FIN. CO.LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10192",
+  "name": "FDR 2 SHRIRAM TPT. FIN. CO.LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10193",
+  "name": "FDR 3 SHRIRAM TPT. FIN. CO.LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10194",
+  "name": "FDR 4 SHRIRAM FINANCE LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10195",
+  "name": "FDR 5 SHRIRAM FINANCE LTD",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "1020",
+  "name": "Checking Account",
+  "active": true,
+  "sage_type": "Cash"
+ },
+ {
+  "id": "10200",
+  "name": "FDR WITH BAJAJ FINSERVE LTD.",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10201",
+  "name": "FDR 1 BAJAJ FINSERVE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10202",
+  "name": "FDR 2 BAJAJ FINSERVE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10203",
+  "name": "FDR 3 BAJAJ FINSERVE",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10204",
+  "name": "FDR 1 BAJAJ FINSERV AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10205",
+  "name": "FDR 2 BAJAJ FINSERV AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10206",
+  "name": "FDR 1 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10207",
+  "name": "FDR 2 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10208",
+  "name": "FDR 3 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10300",
+  "name": "FDR 1 PNB HOU. FIN. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10400",
+  "name": "FDR 1 ICICI BANKAC SMT JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10500",
+  "name": "MAHINDRA GOLD BOND 1 JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10501",
+  "name": "MAHINDRA GOLD BOND 2 JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10502",
+  "name": "MAHINDRA GOLD BOND 3 JAIDEVI",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10600",
+  "name": "INVESTMENT IN GRIP",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10610",
+  "name": "FCNR DEP ICICI BANK AC S.N. V.",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10611",
+  "name": "ADITYA BIRLA S L 50:50",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10612",
+  "name": "ICICI PRUDENTIAL M F",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10613",
+  "name": "ADITYA BIRLA SD P PSV BOND",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10614",
+  "name": "KOTAK NIFTY DL APR 2007",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10615",
+  "name": "HDFC NIFTY SD OCT 2026 INDEX",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10616",
+  "name": "ICICI PRU MAF G P15",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10617",
+  "name": "HSBC SC FUND REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10618",
+  "name": "HDFC FC FUND G INVEST H 2",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10619",
+  "name": "HDFC L & M C FUND REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10620",
+  "name": "HDFC M C FUND REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10621",
+  "name": "SBI CONTRA FUND REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10622",
+  "name": "KOTAK EQUITY OPP FUND G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10623",
+  "name": "UTI NIFTY 50 INDEX F REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10624",
+  "name": "NIPPON INDIA M C FUND G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10625",
+  "name": "FRANKLIN INDIA F C FUND G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10626",
+  "name": "TATA S C FUND REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10627",
+  "name": "NIPPON INDIA S C FUND G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10628",
+  "name": "SBI NIFTY S C 250 I F REG G",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10629",
+  "name": "HDFC FOCUS 30 FUND GROWTH",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10630",
+  "name": "QUANTA MUTUAL FUND 1661 BGP",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "10631",
+  "name": "GROW (INVESMENT IN M F)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "1100",
+  "name": "TDS RECEIVABLE",
+  "active": true,
+  "sage_type": "Accounts Receivable"
+ },
+ {
+  "id": "1110",
+  "name": "ACCRUED INTEREST ON FDR",
+  "active": true,
+  "sage_type": "Accounts Receivable"
+ },
+ {
+  "id": "1150",
+  "name": "Allowance for Doubtful Account",
+  "active": true,
+  "sage_type": "Accounts Receivable"
+ },
+ {
+  "id": "1200",
+  "name": "Inventory",
+  "active": true,
+  "sage_type": "Inventory"
+ },
+ {
+  "id": "1400",
+  "name": "LOAN TO MR RISHI VERMA A/C (I)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "1410",
+  "name": "LOAN TO MR RISHI VERMA A/C(II)",
+  "active": true,
+  "sage_type": "Other Current Assets"
+ },
+ {
+  "id": "1500",
+  "name": "Equipments",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1510",
+  "name": "HOUSE BOAT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1511",
+  "name": "SOLAR SYSTEM",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1512",
+  "name": "VEHICLE ACCOUNT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1520",
+  "name": "TUBEWELL ACCOUNT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1530",
+  "name": "TEMPLE (MODEL)",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1540",
+  "name": "TARRIS / SHED ACCOUNT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1545",
+  "name": "BUILDING ACCOUNT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1550",
+  "name": "EQUIPMENTS ACCOUNT",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1560",
+  "name": "LIVE STOCKS (COWS)",
+  "active": true,
+  "sage_type": "Fixed Assets"
+ },
+ {
+  "id": "1900",
+  "name": "Accum. Depreciation - Prop&Eqt",
+  "active": true,
+  "sage_type": "Accumulated Depreciation"
+ },
+ {
+  "id": "2000",
+  "name": "Accounts Payable",
+  "active": true,
+  "sage_type": "Accounts Payable"
+ },
+ {
+  "id": "201",
+  "name": "FAMILY CONTRIBUTION",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "2010",
+  "name": "YASHWANT JEDHE ADVANCE AG LAND",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "202",
+  "name": "LOAN FROM ICICI AG. FCNR DEP",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2020",
+  "name": "LOAN AGNST FDR FROM SHRIRAM FI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "203",
+  "name": "FDR 2 BAJAJ FINSERV AC JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "2030",
+  "name": "INTEREST PAYABLE TO SHRIRAM FI",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "204",
+  "name": "FDR 1 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "205",
+  "name": "FDR 2 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "206",
+  "name": "FDR 3 SHRIRAM T. F. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "210",
+  "name": "FDR 1 PNB HOU. FIN. AC JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "211",
+  "name": "FDR 1 ICICI BANKAC SMT JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "212",
+  "name": "MAHINDRA GOLD BOND 1 JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "213",
+  "name": "MAHINDRA GOLD BOND 2 JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "214",
+  "name": "MAHINDRA GOLD BOND 3 JAIDEVI",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "215",
+  "name": "S.D. FROM DODDA PANENI RUCHITA",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "2310",
+  "name": "AUDIT FEE PAYABLE",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2320",
+  "name": "I.T.RETURN FILING FEE PAYABLE",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2330",
+  "name": "Salary payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2340",
+  "name": "FUTA Payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2350",
+  "name": "State Payroll Taxes Payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2360",
+  "name": "SUTA Payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2370",
+  "name": "Local Taxes Payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2380",
+  "name": "Income Taxes Payable",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2400",
+  "name": "Customer Deposits",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2500",
+  "name": "Current Portion Long-Term Debt",
+  "active": true,
+  "sage_type": "Other Current Liabilities"
+ },
+ {
+  "id": "2700",
+  "name": "Long Term Debt-Noncurrent",
+  "active": true,
+  "sage_type": "Long Term Liabilities"
+ },
+ {
+  "id": "3910",
+  "name": "Retained Earnings",
+  "active": true,
+  "sage_type": "Equity-Retained Earnings"
+ },
+ {
+  "id": "3920",
+  "name": "Partner's Contribution",
+  "active": true,
+  "sage_type": "Equity-gets closed"
+ },
+ {
+  "id": "3930",
+  "name": "Partner's Draw",
+  "active": true,
+  "sage_type": "Equity-gets closed"
+ },
+ {
+  "id": "3940",
+  "name": "CORPUS FUND",
+  "active": true,
+  "sage_type": "Equity-doesn't close"
+ },
+ {
+  "id": "4000",
+  "name": "Professional Fees",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4010",
+  "name": "SOLAR INCOME",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4020",
+  "name": "SHOP RENT RECEIPTS",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4030",
+  "name": "RESORT RECEIPTS",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4040",
+  "name": "MILK SALE INCOME (DAIRY)",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4050",
+  "name": "LIVE STOCK SALE",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4060",
+  "name": "ARUL FARMING INCOME",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4070",
+  "name": "RENT FROM BANK OF INDIA",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4080",
+  "name": "INCOME FROM MUTUAL FUND",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4100",
+  "name": "INTEREST ON DEPOSITS (FDR)",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4200",
+  "name": "INTEREST INCOME",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4300",
+  "name": "MISCELLANEOUS INCOME",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4400",
+  "name": "PLOT SALE INCOME",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "4900",
+  "name": "Sales/Fees Discounts",
+  "active": true,
+  "sage_type": "Income"
+ },
+ {
+  "id": "5000",
+  "name": "Cost of Sales",
+  "active": true,
+  "sage_type": "Cost of Sales"
+ },
+ {
+  "id": "5400",
+  "name": "Cost of Sales-Salary & Wage",
+  "active": true,
+  "sage_type": "Cost of Sales"
+ },
+ {
+  "id": "5900",
+  "name": "Inventory Adjustments",
+  "active": true,
+  "sage_type": "Cost of Sales"
+ },
+ {
+  "id": "5910",
+  "name": "TEMPLE (MODEL) EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5920",
+  "name": "TRAVELLING EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5925",
+  "name": "LOCAL CONVEYANCE",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5930",
+  "name": "VEHICLE EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5940",
+  "name": "MEDICAL EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5950",
+  "name": "GIFT & WELFARE EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5960",
+  "name": "DAIRY EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5970",
+  "name": "V.I.P.HOUSE FOOD AND KIRANA EX",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5980",
+  "name": "BHAGWAN DRESS EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5990",
+  "name": "MISCELLANEOUS EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "5995",
+  "name": "RENEMUTATION & EMI TO WORKING",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6000",
+  "name": "SALARY AND WAGES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6010",
+  "name": "DONATION TO BALAJI TEMPLE",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6020",
+  "name": "VIP HOUSE PURCHASE EXP",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6030",
+  "name": "ARUL FARMING EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6031",
+  "name": "PANKHA FARM EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6035",
+  "name": "PARK EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6040",
+  "name": "POOJAN EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6050",
+  "name": "BOAT EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6060",
+  "name": "BOOKS & PERIODICALS",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6070",
+  "name": "POSTAGE EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6080",
+  "name": "RENT ACCOUNT",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6090",
+  "name": "FAMILY MEMBER EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6100",
+  "name": "AUDIT FEE EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6150",
+  "name": "FAMILY FUNCTION EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6160",
+  "name": "CHILDEREN EDUCATION FEE EXP",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6200",
+  "name": "Income Tax Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6250",
+  "name": "Other Taxes Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6300",
+  "name": "INDORE OFFICE RENT EXP",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6310",
+  "name": "TDS EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6350",
+  "name": "Maintenance & Repairs Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "638",
+  "name": "BANK CHARGES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6400",
+  "name": "INTEREST EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6410",
+  "name": "ELECTRICITY EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6450",
+  "name": "Office Supplies Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6500",
+  "name": "Telephone Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6550",
+  "name": "PRINTING AND STATIONERY",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6600",
+  "name": "Advertising Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6640",
+  "name": "LEGAL EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6650",
+  "name": "PROFESSIONAL FEE EXPENSES",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6800",
+  "name": "Freight Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6850",
+  "name": "I.T. RETURN FILING FEE",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6900",
+  "name": "Purchase Disc-Expense Items",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "6950",
+  "name": "Insurance Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "7050",
+  "name": "Depreciation Expense",
+  "active": true,
+  "sage_type": "Expenses"
+ },
+ {
+  "id": "7100",
+  "name": "Gain/Loss - MUTUAL FUND",
+  "active": true,
+  "sage_type": "Expenses"
+ }
+]

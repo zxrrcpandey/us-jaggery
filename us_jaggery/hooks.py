@@ -145,6 +145,14 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+	"Account": {
+		# Auto-assign the next account_number (Account ID) within the group for
+		# new accounts left blank. Runs before autoname so it lands in the name.
+		"before_insert": "us_jaggery.overrides.account.autoset_account_number",
+	}
+}
+
 # Scheduled Tasks
 # ---------------
 
