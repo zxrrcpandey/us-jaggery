@@ -1,0 +1,71 @@
+{
+  "name": "US Jaggery Chart of Accounts",
+  "country_code": "in",
+  "description": "DRAFT TEMPLATE. Replace the 'tree' below with the real US Jaggery account list. Each account's 'account_number' is its ID. Group accounts hold children (or set is_group:1); leaf accounts may set account_type. Apply with: bench --site <site> execute us_jaggery.setup.install.import_coa --kwargs \"{'company':'US Jaggery','replace_existing':True}\"",
+  "tree": {
+    "Assets": {
+      "account_number": "1000",
+      "root_type": "Asset",
+      "is_group": 1,
+      "Current Assets": {
+        "account_number": "1100",
+        "is_group": 1,
+        "Cash": { "account_number": "1110", "account_type": "Cash" },
+        "Bank Accounts": { "account_number": "1120", "account_type": "Bank", "is_group": 1 },
+        "Accounts Receivable": { "account_number": "1130", "account_type": "Receivable", "is_group": 1 },
+        "Stock Assets": {
+          "account_number": "1140",
+          "is_group": 1,
+          "Raw Material - Sugarcane": { "account_number": "1141", "account_type": "Stock" },
+          "Finished Goods - Jaggery": { "account_number": "1142", "account_type": "Stock" }
+        }
+      },
+      "Fixed Assets": {
+        "account_number": "1500",
+        "is_group": 1,
+        "Plant & Machinery": { "account_number": "1510", "account_type": "Fixed Asset" }
+      }
+    },
+    "Liabilities": {
+      "account_number": "2000",
+      "root_type": "Liability",
+      "is_group": 1,
+      "Current Liabilities": {
+        "account_number": "2100",
+        "is_group": 1,
+        "Accounts Payable": { "account_number": "2110", "account_type": "Payable", "is_group": 1 },
+        "Duties and Taxes": { "account_number": "2120", "account_type": "Tax", "is_group": 1 }
+      }
+    },
+    "Equity": {
+      "account_number": "3000",
+      "root_type": "Equity",
+      "is_group": 1,
+      "Capital Account": { "account_number": "3100" },
+      "Retained Earnings": { "account_number": "3200" }
+    },
+    "Income": {
+      "account_number": "4000",
+      "root_type": "Income",
+      "is_group": 1,
+      "Direct Income": {
+        "account_number": "4100",
+        "is_group": 1,
+        "Sale of Jaggery": { "account_number": "4110", "account_type": "Income Account" }
+      },
+      "Indirect Income": { "account_number": "4200", "is_group": 1 }
+    },
+    "Expenses": {
+      "account_number": "5000",
+      "root_type": "Expense",
+      "is_group": 1,
+      "Cost of Goods Sold": {
+        "account_number": "5100",
+        "is_group": 1,
+        "Sugarcane Purchase": { "account_number": "5110", "account_type": "Cost of Goods Sold" },
+        "Processing & Boiling Expenses": { "account_number": "5120", "account_type": "Expense Account" }
+      },
+      "Indirect Expenses": { "account_number": "5200", "is_group": 1 }
+    }
+  }
+}

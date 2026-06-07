@@ -1,0 +1,12 @@
+.DS_Store
+*.pyc
+__pycache__/
+*.egg-info/
+*.swp
+tags
+.idea/
+.vscode/
+node_modules/
+.env
+*.log
+us_jaggery/public/dist/
