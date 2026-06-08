@@ -61,11 +61,23 @@ def _group(company, account_name):
 	)
 
 
+# Some erpnext versions build the India chart (equity under "Capital Account"), others the
+# generic Standard chart (equity under the "Equity" root). Resolve with a fallback.
+GROUP_FALLBACKS = {"Capital Account": "Equity"}
+
+
+def _resolve_group(company, account_name):
+	nm = _group(company, account_name)
+	if not nm and account_name in GROUP_FALLBACKS:
+		nm = _group(company, GROUP_FALLBACKS[account_name])
+	return nm
+
+
 def _ensure_subgroup(company, sub_name, parent_group):
 	existing = _group(company, sub_name)
 	if existing:
 		return existing
-	parent = _group(company, parent_group)
+	parent = _resolve_group(company, parent_group)
 	if not parent:
 		frappe.throw(f"Parent group {parent_group!r} not found for company {company}")
 	doc = frappe.new_doc("Account")
@@ -118,7 +130,7 @@ def import_accounts(company=COMPANY):
 				parent_group, subgroup, acct_type = "Bank Accounts", None, "Bank"
 				banks.append(f'{acc["id"]} {acc["name"]}')
 
-			parent = _ensure_subgroup(company, subgroup, parent_group) if subgroup else _group(company, parent_group)
+			parent = _ensure_subgroup(company, subgroup, parent_group) if subgroup else _resolve_group(company, parent_group)
 			if not parent:
 				errors.append((acc["id"], f"parent group {parent_group!r} not found"))
 				continue
@@ -298,4 +310,18 @@ def run(company=COMPANY):
 	result = import_accounts(company)
 	result["company"] = company
 	result["total_accounts"] = frappe.db.count("Account", {"company": company})
+	return result
+
+
+def provision(company=COMPANY):
+	"""Full first-time setup on a fresh site, in the correct order:
+	Auto-ID field + view settings (must precede company creation, since the auto-number
+	hook reads custom_auto_id) -> company (CoA + India Compliance GST/TDS) -> 185 client
+	accounts. Idempotent / re-runnable."""
+	setup_auto_id_field()
+	create_company(company)
+	result = import_accounts(company)
+	result["company"] = company
+	result["client_accounts_loaded"] = len(_load())
+	result["total_company_accounts"] = frappe.db.count("Account", {"company": company})
 	return result
