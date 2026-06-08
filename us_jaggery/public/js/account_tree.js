@@ -16,10 +16,10 @@ window.us_jaggery_patch_account_tree = function () {
 		const id = data.custom_auto_id;
 		if (id) {
 			return (
-				label +
-				' <span class="text-muted" style="font-weight:600">[' +
+				'<span class="text-muted" style="font-weight:600">[' +
 				frappe.utils.escape_html(id) +
-				"]</span>"
+				"]</span> " +
+				label
 			);
 		}
 		return label;
