@@ -22,13 +22,18 @@ def autoset_account_number(doc, method=None):
 	if doc.account_number or doc.is_group or not doc.company:
 		return  # keep client/manually-entered IDs untouched; never number group accounts
 
-	next_no = (
-		_next_in_group(doc)
-		or _seed_from_parent(doc)
-		or _next_in_root_type(doc)
-	)
-	if next_no:
-		doc.account_number = str(next_no)
+	base = _next_in_group(doc) or _seed_from_parent(doc) or _next_in_root_type(doc)
+	if base:
+		doc.account_number = str(_next_free(doc.company, base))
+
+
+def _next_free(company, start):
+	"""First number >= start that isn't already used by this company (avoids collisions
+	when the client's groups share a numeric range, e.g. banks vs other current assets)."""
+	n = int(start)
+	while frappe.db.exists("Account", {"company": company, "account_number": str(n)}):
+		n += 1
+	return n
 
 
 def _numeric(values):
