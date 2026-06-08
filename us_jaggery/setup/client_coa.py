@@ -215,7 +215,16 @@ def setup_auto_id_field():
 					"in_standard_filter": 1,
 					"columns": 2,
 					"description": "Auto-incrementing account ID. Leave blank on a new account to auto-assign.",
-				}
+				},
+				{
+					"fieldname": "custom_description",
+					"label": "Description",
+					"fieldtype": "Small Text",
+					"insert_after": "account_type",
+					"translatable": 0,
+					"in_list_view": 1,
+					"columns": 3,
+				},
 			]
 		},
 		ignore_validate=True,
@@ -230,12 +239,31 @@ def setup_auto_id_field():
 		"Account", "account_number", "in_list_view", "0", "Check",
 		validate_fields_for_doctype=False,
 	)
-	# show the account name (not the docname '... - UJ') as the list subject / form title,
-	# which removes the 'ID' column (with hide_name_column in account_list.js)
+	# make Auto-ID the title field -> it becomes the first (leftmost) list column and
+	# removes the docname 'ID' column (with hide_name_column in account_list.js).
+	# Accounts without an Auto-ID fall back to the account name for the clickable label.
 	make_property_setter(
-		"Account", None, "title_field", "account_name", "Data",
+		"Account", None, "title_field", "custom_auto_id", "Data",
 		for_doctype=True, validate_fields_for_doctype=False,
 	)
+
+	# List view column order: Auto-ID (title, fixed first) | Description | Account Name | Status
+	lvs_fields = json.dumps([
+		{"fieldname": "custom_description", "label": "Description"},
+		{"fieldname": "account_name", "label": "Account Name"},
+		{"fieldname": "status_field", "label": "Status"},
+	])
+	if frappe.db.exists("List View Settings", "Account"):
+		lvs = frappe.get_doc("List View Settings", "Account")
+	else:
+		lvs = frappe.new_doc("List View Settings")
+		lvs.name = "Account"
+		lvs.__newname = "Account"
+	lvs.fields = lvs_fields
+	lvs.total_fields = 6
+	lvs.flags.ignore_permissions = True
+	lvs.save()
+
 	frappe.clear_cache(doctype="Account")
 	frappe.db.commit()
 
@@ -313,15 +341,30 @@ def run(company=COMPANY):
 	return result
 
 
-def provision(company=COMPANY):
+def _ensure_erpnext_fixtures():
+	"""ERPNext master fixtures (UOMs, Warehouse Types incl. 'Transit', etc.) normally come
+	from the setup wizard; ensure they exist before creating a company programmatically."""
+	if frappe.db.exists("Warehouse Type", "Transit"):
+		return
+	from erpnext.setup.setup_wizard.operations.install_fixtures import install as install_fixtures
+
+	install_fixtures("India")
+	frappe.db.commit()
+
+
+def provision(company=COMPANY, import_chart=True):
 	"""Full first-time setup on a fresh site, in the correct order:
-	Auto-ID field + view settings (must precede company creation, since the auto-number
-	hook reads custom_auto_id) -> company (CoA + India Compliance GST/TDS) -> 185 client
-	accounts. Idempotent / re-runnable."""
+	erpnext fixtures -> Auto-ID field + view settings (must precede company creation, since
+	the auto-number hook reads custom_auto_id) -> company (CoA + India Compliance GST/TDS)
+	-> optionally the 185 client accounts. Idempotent / re-runnable.
+
+	Pass import_chart=False to leave the Chart of Accounts for the client to build manually."""
+	_ensure_erpnext_fixtures()
 	setup_auto_id_field()
 	create_company(company)
-	result = import_accounts(company)
-	result["company"] = company
-	result["client_accounts_loaded"] = len(_load())
+	result = {"company": company}
+	if import_chart:
+		result.update(import_accounts(company))
+		result["client_accounts_loaded"] = len(_load())
 	result["total_company_accounts"] = frappe.db.count("Account", {"company": company})
 	return result
