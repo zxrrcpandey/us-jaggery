@@ -26,12 +26,15 @@ separate from ERPNext's native `account_number` so account **names stay clean** 
 A **`custom_description`** (Small Text) field on every Account, shown on the form and as a
 list-view column.
 
-### Account list & tree
+### Account list, tree & form
 - **List view** columns: **Auto-ID · Description · Account Name · Status** (the docname
   "ID" / native Account Number columns are hidden). Auto-ID is the first column; accounts
   without one show **—**. Accounts **with** an Auto-ID sort to the top (numeric order).
-- **Chart of Accounts tree** shows the Auto-ID in brackets next to each ledger, e.g.
-  `BANK OF INDIA [10120]`.
+- **Chart of Accounts tree** shows the Auto-ID in brackets **before** each ledger name,
+  e.g. `[10120] BANK OF INDIA`.
+- **Form**: ERPNext hides the Account Name field on saved accounts (renaming is done via a
+  dialog); since the form title now shows the Auto-ID, a form script keeps **Account Name
+  visible (read-only)** so it's never hidden.
 
 ### Chart of Accounts provisioning
 `us_jaggery.setup.client_coa` creates the **US Jaggery** company (standard/India chart +
@@ -46,14 +49,15 @@ accounts as `Bank`.
 
 ```
 us_jaggery/
-├── hooks.py                      # doc_events + doctype_list_js / doctype_tree_js
+├── hooks.py                      # doc_events + doctype_js / doctype_list_js / doctype_tree_js
 ├── overrides/
 │   ├── account.py                # Auto-ID auto-increment hook (before_insert)
 │   └── account_tree.py           # tree node provider returning custom_auto_id
 ├── public/js/
+│   ├── account.js                # form: keep Account Name visible (read-only) when saved
 │   ├── account_list.js           # list view: hide ID col, Auto-ID first (— when empty),
 │   │                             #   non-empty-first sort, formatters
-│   └── account_tree.js           # tree view: render "<name> [Auto-ID]"
+│   └── account_tree.js           # tree view: render "[Auto-ID] <name>"
 └── setup/
     ├── client_coa.py             # company + Auto-ID field + views + CoA import
     └── data/client_accounts.json # client's 185-account chart (id, name, type)
