@@ -218,6 +218,12 @@ def setup_auto_id_field():
 		"Account", "account_number", "in_list_view", "0", "Check",
 		validate_fields_for_doctype=False,
 	)
+	# show the account name (not the docname '... - UJ') as the list subject / form title,
+	# which removes the 'ID' column (with hide_name_column in account_list.js)
+	make_property_setter(
+		"Account", None, "title_field", "account_name", "Data",
+		for_doctype=True, validate_fields_for_doctype=False,
+	)
 	frappe.clear_cache(doctype="Account")
 	frappe.db.commit()
 
