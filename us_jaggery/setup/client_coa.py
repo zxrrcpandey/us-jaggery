@@ -199,16 +199,24 @@ def setup_auto_id_field():
 					"fieldtype": "Data",
 					"insert_after": "account_name",
 					"translatable": 0,
+					"in_list_view": 1,
+					"in_standard_filter": 1,
+					"columns": 2,
 					"description": "Auto-incrementing account ID. Leave blank on a new account to auto-assign.",
 				}
 			]
 		},
 		ignore_validate=True,
 	)
-	# add custom_auto_id to the Account doctype's link search fields
+	# add custom_auto_id to the Account doctype's link search fields (Journal Entry resolves by Auto-ID)
 	make_property_setter(
 		"Account", None, "search_fields", "account_number,custom_auto_id", "Data",
 		for_doctype=True, validate_fields_for_doctype=False,
+	)
+	# hide the now-unused native Account Number column from the list view
+	make_property_setter(
+		"Account", "account_number", "in_list_view", "0", "Check",
+		validate_fields_for_doctype=False,
 	)
 	frappe.clear_cache(doctype="Account")
 	frappe.db.commit()
