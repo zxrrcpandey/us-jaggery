@@ -225,7 +225,20 @@ def setup_auto_id_field():
 					"in_list_view": 1,
 					"columns": 3,
 				},
-			]
+			],
+			# Auto-ID column on the Journal Entry grid, before the Account column
+			# (insert_after "" => first). Two-way fill is handled by public/js/journal_entry.js.
+			"Journal Entry Account": [
+				{
+					"fieldname": "custom_auto_id",
+					"label": "Auto-ID",
+					"fieldtype": "Data",
+					"insert_after": "",
+					"in_list_view": 1,
+					"columns": 1,
+					"translatable": 0,
+				}
+			],
 		},
 		ignore_validate=True,
 	)
