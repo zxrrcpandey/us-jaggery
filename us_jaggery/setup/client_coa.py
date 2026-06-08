@@ -98,7 +98,8 @@ def create_company(company=COMPANY, abbr=ABBR, currency="INR", country="India"):
 
 def import_accounts(company=COMPANY):
 	data = _load()
-	created, skipped, banks, errors = 0, 0, [], []
+	abbr = frappe.get_cached_value("Company", company, "abbr")
+	created, skipped, banks, errors, suffixed = 0, 0, [], [], []
 
 	for acc in data:
 		try:
@@ -122,10 +123,18 @@ def import_accounts(company=COMPANY):
 				errors.append((acc["id"], f"parent group {parent_group!r} not found"))
 				continue
 
+			# ERPNext account names must be unique; without the ID in the name, the
+			# client's duplicate names (and names matching standard/group accounts)
+			# would collide. Disambiguate ONLY those by appending the Auto-ID.
+			acct_name = acc["name"]
+			if frappe.db.exists("Account", f"{acct_name} - {abbr}"):
+				acct_name = f'{acc["name"]} ({acc["id"]})'
+				suffixed.append(f'{acc["id"]} {acc["name"]}')
+
 			doc = frappe.new_doc("Account")
 			doc.update({
-				"account_name": acc["name"],
-				"account_number": acc["id"],
+				"account_name": acct_name,
+				"custom_auto_id": acc["id"],   # client ID -> custom Auto-ID field (account_number left blank)
 				"parent_account": parent,
 				"company": company,
 				"is_group": 0,
@@ -139,22 +148,31 @@ def import_accounts(company=COMPANY):
 			errors.append((acc["id"], f"{type(e).__name__}: {e}"))
 
 	frappe.db.commit()
-	return {"created": created, "skipped": skipped, "banks": banks, "errors": errors}
+	return {"created": created, "skipped": skipped, "banks": banks, "suffixed": suffixed, "errors": errors}
 
 
 SUBGROUPS = ["Other Current Assets", "Other Current Liabilities", "Long Term Liabilities", "Cost of Sales"]
 
 
 def cleanup(company=COMPANY):
-	"""Remove the imported client accounts + the sub-groups we created (leaves first)."""
+	"""Remove previously-imported client accounts (matched on either the old
+	account_number OR the new custom_auto_id), the stray 'Test Bank', and the
+	sub-groups we created (leaves first)."""
 	ids = [a["id"] for a in _load()]
+	names = set()
+	for field in ("account_number", "custom_auto_id"):
+		if not frappe.db.has_column("Account", field):
+			continue
+		names.update(frappe.get_all(
+			"Account", filters={"company": company, "is_group": 0, field: ["in", ids]}, pluck="name"
+		))
+	# stray manual test account(s)
+	names.update(frappe.get_all(
+		"Account", filters={"company": company, "is_group": 0, "account_name": ["like", "%Test Bank%"]}, pluck="name"
+	))
+
 	deleted = 0
-	for name in frappe.get_all(
-		"Account",
-		filters={"company": company, "is_group": 0, "account_number": ["in", ids]},
-		pluck="name",
-		order_by="lft desc",
-	):
+	for name in frappe.get_all("Account", filters={"name": ["in", list(names)]}, pluck="name", order_by="lft desc"):
 		frappe.delete_doc("Account", name, force=True, ignore_permissions=True)
 		deleted += 1
 	for sub in SUBGROUPS:
@@ -164,6 +182,48 @@ def cleanup(company=COMPANY):
 			deleted += 1
 	frappe.db.commit()
 	return deleted
+
+
+def setup_auto_id_field():
+	"""Create the custom 'Auto-ID' field on Account and make it searchable in link
+	fields (so typing an Auto-ID in Journal Entry resolves the account). Idempotent."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+	from frappe.custom.doctype.property_setter.property_setter import make_property_setter
+
+	create_custom_fields(
+		{
+			"Account": [
+				{
+					"fieldname": "custom_auto_id",
+					"label": "Auto-ID",
+					"fieldtype": "Data",
+					"insert_after": "account_name",
+					"translatable": 0,
+					"description": "Auto-incrementing account ID. Leave blank on a new account to auto-assign.",
+				}
+			]
+		},
+		ignore_validate=True,
+	)
+	# add custom_auto_id to the Account doctype's link search fields
+	make_property_setter(
+		"Account", None, "search_fields", "account_number,custom_auto_id", "Data",
+		for_doctype=True, validate_fields_for_doctype=False,
+	)
+	frappe.clear_cache(doctype="Account")
+	frappe.db.commit()
+
+
+def reimport_with_auto_id(company=COMPANY):
+	"""Switch from native account_number to the custom Auto-ID field:
+	add the field, wipe the old import + Test Bank, re-import clean (Auto-ID = client ID)."""
+	setup_auto_id_field()
+	cleaned = cleanup(company)
+	result = import_accounts(company)
+	result["cleaned"] = cleaned
+	result["client_accounts_loaded"] = len(_load())
+	result["total_company_accounts"] = frappe.db.count("Account", {"company": company})
+	return result
 
 
 def redo(company=COMPANY):
@@ -181,21 +241,19 @@ def verify(company=COMPANY):
 	a live auto-increment test, and an ID-search test (the Journal Entry behaviour)."""
 	out = {}
 	out["client_leaves"] = frappe.db.count(
-		"Account", {"company": company, "is_group": 0, "account_number": ["!=", ""]}
+		"Account", {"company": company, "is_group": 0, "custom_auto_id": ["!=", ""]}
 	)
 	out["sample_1010"] = frappe.db.get_value(
-		"Account", {"company": company, "account_number": "1010"}, ["name", "account_type"], as_dict=True
+		"Account", {"company": company, "custom_auto_id": "1010"},
+		["name", "account_number", "custom_auto_id", "account_type"], as_dict=True
 	)
 	out["banks"] = frappe.get_all(
-		"Account", filters={"company": company, "account_type": "Bank"}, fields=["account_number", "account_name"]
+		"Account", filters={"company": company, "account_type": "Bank", "custom_auto_id": ["!=", ""]},
+		fields=["custom_auto_id", "account_name", "name"]
 	)
 	out["dup_pair_10205_203"] = frappe.get_all(
-		"Account", filters={"company": company, "account_number": ["in", ["10205", "203"]]},
-		fields=["account_number", "account_name", "root_type"],
-	)
-	out["subgroup_numbers"] = frappe.get_all(
-		"Account", filters={"company": company, "account_name": ["in", SUBGROUPS], "is_group": 1},
-		fields=["account_name", "account_number"],
+		"Account", filters={"company": company, "custom_auto_id": ["in", ["10205", "203"]]},
+		fields=["custom_auto_id", "account_name", "name", "root_type"],
 	)
 
 	# Live auto-increment test: a new ledger under Indirect Expenses should get max-sibling+1
@@ -204,19 +262,18 @@ def verify(company=COMPANY):
 	test.update({"account_name": "ZZ Autonumber Test", "parent_account": ie, "company": company, "is_group": 0})
 	test.flags.ignore_permissions = True
 	test.insert()
-	out["autonumber_test"] = {"assigned_id": test.account_number, "name": test.name}
+	out["autonumber_test"] = {"assigned_auto_id": test.get("custom_auto_id"), "name": test.name}
 	frappe.delete_doc("Account", test.name, force=True, ignore_permissions=True)
 	frappe.db.commit()
 
-	# ID-search test (what the Journal Entry account field does when you type an ID)
+	# Auto-ID search test (what the Journal Entry account field does when you type an Auto-ID)
 	try:
-		from frappe.desk.search import search_link
+		from frappe.desk.search import search_widget
 
-		frappe.response["results"] = []
-		search_link("Account", "10120", filters={"company": company, "is_group": 0}, page_length=5)
-		out["search_id_10120"] = [r.get("value") for r in frappe.response.get("results", [])][:5]
+		res = search_widget(doctype="Account", txt="10120", filters={"company": company, "is_group": 0})
+		out["search_auto_id_10120"] = [r[0] for r in (res or [])][:5]
 	except Exception as e:
-		out["search_id_10120"] = f"{type(e).__name__}: {e}"
+		out["search_auto_id_10120"] = f"{type(e).__name__}: {e}"
 
 	return out
 
